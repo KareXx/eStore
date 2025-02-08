@@ -1,0 +1,38 @@
+
+.product__recommendation-card{
+    flex-shrink: 0;
+    display: flex;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 7px;
+    border: 2px solid #151927;
+    margin: 0 10px 0 0;
+    user-select: none;
+    -webkit-user-select: none; /* Для Safari */
+    -ms-user-select: none; /* Для IE */
+}
+
+.product__recommendation-card__wrapper{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(174, 174, 174, 0.5);
+    backdrop-filter: blur(40px);
+}
+.product__recommendation-card__img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    pointer-events: none;
+
+}
+
+.product__recommendation-card__img img{
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+}

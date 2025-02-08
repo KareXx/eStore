@@ -1,0 +1,92 @@
+.filter__overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(255, 230, 230, 0.1); 
+    backdrop-filter: blur(1px); 
+    z-index: 0;
+}
+
+.filter{
+    position: fixed;
+    top: 0;
+    left: -500px;
+    height: 100vh;
+    width: 500px;
+    z-index: 2;
+    transition: all 0.4s;
+}
+
+.filter_wrapper{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #E2D9D5;
+    color: #151927;
+    box-sizing: border-box;
+    padding: 20px;
+    z-index: 5;
+}
+
+
+
+
+.filter_title{
+    display: inline-block;
+    margin: 40px auto;
+    font-size: 50px;
+    font-family: Montserrat;
+}
+
+.filter_list{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+.filter_set_price input{
+    background-color: #151927;
+    border: none;
+    color: #E2D9D5;
+    width: 50%;
+    height: 45px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.filter_set_price{
+    display: flex;
+    width: 100%;
+}
+
+.checkbox_menu_wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+}
+
+.checkbox_menu_wrapper{
+    margin: 15px 0;
+}
+
+.filter_set_price input{
+    border-radius: 0;
+}
+
+@media (max-width: 1024px){
+    .filter{
+        width: 100vw;
+        left: -100vw;
+    }
+    .filter_wrapper{
+        padding: 10px;
+    }
+}
+
+.active{
+    left: 0;
+}

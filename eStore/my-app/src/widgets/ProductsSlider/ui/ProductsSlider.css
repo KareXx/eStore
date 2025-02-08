@@ -1,0 +1,27 @@
+
+.slider-list{
+    width: 100%;
+   
+}
+
+.slider-list__wrapper{
+    display: flex;
+    justify-content: start;
+    transform: translateX(0);
+    overflow: auto;
+    padding: 20px 0;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;  
+    scroll-behavior: smooth;
+}
+
+.slider-list__wrapper::-webkit-scrollbar {
+    display: none; 
+}
+
+@media (max-width: 430px){
+    .slider-list{
+        overflow: hidden;  
+    }
+    
+}

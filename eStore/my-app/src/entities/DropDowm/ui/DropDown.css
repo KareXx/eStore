@@ -1,0 +1,50 @@
+.filter_elem{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    margin: 0 0 20px 0;
+    padding: 0 0 10px 0;
+    border-bottom: 3px solid #151927;
+
+}
+
+
+.filter_elem_title{
+    display: block;
+    position: relative;
+    font-size: 30px;
+    font-family: Montserrat;
+    width: 100%;
+    text-align: start;
+    height: 40px;
+}
+
+
+.filter_elem_title::after{
+    content: "";
+    position: absolute;
+
+    width: 15px;
+    height: 15px;
+    border-left: 3px solid #151927;
+    border-bottom: 3px solid #151927;
+    transform: translateY(-50%) rotate(-45deg);
+    top: 50%; /* Центрирование по вертикали */
+    right: 0;
+}
+
+.filter_elem_body{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;
+    transition: all .3s;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.open{
+    max-height: 200px;
+}
+
+

@@ -1,0 +1,106 @@
+.basket__overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(255, 230, 230, 0.1); 
+    backdrop-filter: blur(1px); 
+    z-index: -1;
+}
+
+
+.basket{
+    position: fixed;
+    top: 0;
+    right: -500px;
+    width: 500px;
+    height: 100vh;
+    background-color: #e2d9d5;
+    z-index: 10;
+    color: #151927;
+    transition: all 0.3s;
+    font-family: Montserrat;
+    font-size: 18px;
+    z-index: 11;
+
+}
+
+
+.basket__wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20px;
+    height: 100%;
+    z-index: 5;
+}
+.basket__layout{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+}
+
+
+.basket__title{
+    font-size: 50px;
+    font-family: Montserrat;
+    margin: 40px 0;
+}
+
+.basket__product-list{
+    flex: 1;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 20px;
+}
+
+.basket__details{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: start;
+}
+
+.basket__details__total-price{
+    font-size: 32px;
+    font-weight: 600;
+    font-family: Montserrat;
+    border-top: 2px solid #151927;
+    width: 100%;
+    text-align: start;
+    padding: 25px 0 0 0 ;
+    margin: 0 0 25px 0;
+}
+
+.basket__details__buttons{
+    width: 100%;
+}
+
+.basket__details__buttons button{
+    width: 100%;
+    height: 60px;
+    background-color: #151927;
+    color:#e2d9d5;
+    text-transform: uppercase;
+}
+
+
+
+
+@media (max-width: 1024px){
+    .basket{
+        width: 100vw;
+        right: -100vw;
+    }
+    
+}
+
+.basket__active{
+    right: 0px;
+}

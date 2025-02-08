@@ -1,0 +1,135 @@
+
+
+.card__catalog{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #3E4154;
+    /* width: 350px; */
+    height: 500px;
+    overflow: hidden;
+    cursor: pointer;
+    /* margin: 20px auto; */
+    transition: all 0.3s;
+    margin: 0 auto;
+
+    
+    
+    
+}
+
+
+.card__catalog__img{
+    flex: 1;
+    width: 100%;
+    height: 345px;
+    margin: 0 0 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card__catalog__img img{
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    max-width: 100%; /* Чтобы изображение не выходило за пределы контейнера */
+    max-height: 100%; /* Чтобы изображение не выходило за пределы контейнера */
+    transition: transform 0.3s ease; /* Добавляем плавный переход */
+}
+
+.card__catalog__information{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 30px 30px 30px;
+    font-size: 21px;
+    font-family: Montserrat;
+    font-size: 20px;
+}
+
+.card__catalog__price{
+    margin: 10px 0 0 0;
+    font-size: 18px;
+}
+
+.card__catalog::before{
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: 100px;
+    transform: rotate(-45deg);
+    width: 8px;
+    height: 100px;
+    /* background-color: #E2D9D5; */
+    background-color: rgb(116, 0, 0);
+
+    transition: all .2s;
+
+}
+
+.card__catalog:hover{
+    background-color: black;
+}
+
+.card__catalog:hover::before{
+    top: -20px;
+    right: 20px;
+}
+
+.card__catalog::after{
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: 100px;
+    transform: rotate(-45deg);
+    width: 8px;
+    height: 100px;
+     /* background-color: #E2D9D5; */
+     background-color: rgb(116, 0, 0);
+    transition: all .2s;
+
+}
+
+.card__catalog:hover::after{
+    bottom: -20px;
+    left: 20px;
+}
+
+.card__catalog:hover .card__catalog__img img{
+    transform: scale(1.1);
+}
+
+.card__catalog__buttons{
+    width: 100%;
+    height: 50px;
+}
+
+.card__catalog__buttons button{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: #e2d9d5;
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+.card__catalog__buttons button:hover{
+    background-color: #e2d9d5;
+    color: #000;
+
+}
+
+@media (max-width: 1024px){
+    .card__catalog{
+        width: 100%;
+        height: 400px;
+    }
+    .card__catalog__img{
+        height: 250px;
+    }
+}

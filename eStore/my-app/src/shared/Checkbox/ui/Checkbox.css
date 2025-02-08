@@ -1,0 +1,45 @@
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    color: #151927;
+    margin: 0 0 5px 0;
+  }
+  
+  .checkbox input[type="checkbox"] {
+    display: none; /* Скрываем стандартный чекбокс */
+  }
+  
+  .checkbox label {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .checkbox label::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 2px solid #3e4154;
+    background-color: #e2d9d5;
+    display: inline-block;
+    margin-right: 10px;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  .checkbox input[type="checkbox"]:checked + label::before {
+    background-color: #151927;
+    border-color: #151927;
+  }
+  
+  .checkbox input[type="checkbox"]:checked + label::after {
+    content: "✔";
+    color: #e2d9d5;
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    font-size: 14px;
+    font-weight: bold;
+  }

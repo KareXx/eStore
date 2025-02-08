@@ -1,0 +1,107 @@
+.card{
+    width: 300px;
+    height: 450px;
+    background-color: #151927;
+    box-sizing: border-box;
+    padding: 10px 10px 30px 10px;   
+    color: #E2D9D5;
+    font-family: Playfair Display;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    border: 5px solid #3E4154;
+    transition: all 0.5s; 
+    z-index: 1;
+
+    user-select: none;
+    -webkit-user-select: none; /* Для Safari */
+    -ms-user-select: none; /* Для IE */
+}
+    
+
+.card:hover{
+    transform: scale(1.1);
+}
+
+@media (max-width: 430px){
+    .card:hover{
+        transform: none;
+    }
+
+}
+
+.image{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.image img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.information{
+    margin: 10px 0 10px 0;
+    flex: 1;
+}
+
+.title{
+    margin: 0 0 15px 0;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons > *:first-child{
+    margin: 0 10px 0 0;
+}
+
+.buttons > * {
+    position: relative;
+    box-sizing: border-box;
+    min-width: 40%;
+    height: 35px;
+    padding: 3px 10px;
+    border: 3px solid #3E4154;
+    background-color: #151927;
+    overflow: hidden; /* Добавлено, чтобы скрыть псевдоэлемент */
+    transition: transform 0.3s; /* Плавный переход для кнопки */
+    cursor: pointer;
+}
+
+.buttons > *::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+
+    background-color: rgba(62, 65, 84, 0.5); /* Цвет псевдоэлемента */
+    transition: width 0.3s; /* Плавный переход для псевдоэлемента */
+}
+
+
+
+.buttons > *:hover {
+    transform: scale(1.1); 
+}
+
+.buttons > *:hover::before {
+    width: 100%; /* Установка ширины псевдоэлемента на 100% при наведении */
+}
+
+@media (max-width: 1024px){
+    .card{
+        width: 250px;
+        height: 420px;
+    }
+}

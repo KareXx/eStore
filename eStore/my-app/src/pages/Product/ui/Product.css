@@ -1,0 +1,124 @@
+.product_page{
+    width: 100%;
+}
+
+.product{
+    display: flex;
+    background-color: #F7F7F7;
+    height: 100%; /* Теперь можно задать высоту 100%, так как родитель имеет фиксированную высоту */
+    border-bottom: 3px solid #151927;
+}
+
+
+
+.product_info{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    box-sizing: border-box;
+    padding: 30px;
+    flex: 1 1;
+    border-left: 3px solid #151927;
+}
+
+.product_info_title{
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 2px;
+
+}
+.product_info_colection{
+    color: #ACA187;
+}
+
+.product_info_price{
+    margin: 20px 0 0 0;
+    font-size: 25px;
+    font-weight: 100;
+}
+
+.product_info_addition{
+    width: 100%;
+   text-align: start;
+}
+.product_info_addition_paragraphs{
+    display: flex;
+    align-items: center;
+    font-size: 23px;
+    text-transform: uppercase;
+    margin: 40px 0 0 0;
+    width: 100%;
+    border-bottom: 3px solid #151927;
+    overflow: hidden;
+}
+
+.paragraphs_title{
+    margin: 0 20px 0 0;
+    cursor: pointer;
+}
+
+.product_buttons{
+    margin: 30px 0 0 0;
+}
+.product_buttons button{
+    width: 200px;
+    height: 45px;
+    border: 2px solid #ACA187;
+    text-transform: uppercase;
+    margin: 0 20px 0 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 2; /* Текст выше фона */
+}
+
+.product_buttons button::before{
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background-color: #151927;
+    top: 250%;
+    left: -250%;
+    transform: rotate(45deg);
+    transition: all 1s;
+    z-index: -1; /* Псевдоэлемент ниже текста */
+}
+
+.product_buttons button:hover::before{
+    top: -350%;
+    left: 0;
+}
+.product_buttons button:hover{
+    color: #F7F7F7;
+    
+}
+
+
+.product_page__recommendation{
+    width: 100%;
+}
+
+@media (max-width: 1024px){
+    .product{
+        flex-direction: column;
+    }
+    .product_info{
+        border: none;
+    }
+
+    .product_buttons{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .product_buttons button{
+        width: 50%;
+        margin: 0;
+    }
+
+    .product_buttons button:first-child{
+        margin: 0 30px 0 0;
+    }
+}
+

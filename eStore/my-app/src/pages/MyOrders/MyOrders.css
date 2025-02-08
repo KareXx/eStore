@@ -1,0 +1,9 @@
+
+.my-orders{
+    width: 100%;
+    height: 100vh;
+    background-color: #151927;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}

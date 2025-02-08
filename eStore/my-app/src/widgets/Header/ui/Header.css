@@ -1,0 +1,300 @@
+ul{
+    list-style: none;
+}
+button {
+    all: unset; /* Сбрасывает все стили, в том числе border, padding, background и т.д. */
+    box-sizing: border-box; /* Рекомендуется для управления размерами */
+    display: inline-block; /* Для сохранения поведения как у кнопки */
+    cursor: pointer; /* Указатель при наведении, как у обычной кнопки */
+}
+
+.header{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    max-width: 100vw;
+    box-sizing: border-box;
+    font-size: 21px;
+    background-color: #151927;
+    color: #E2D9D5;
+    font-family: Playfair Display;
+}
+
+
+.header_wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.logo{
+    font-size: 40px;
+    margin: 0 0 0 40px;
+}
+
+.navigation-list{
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.navigation-list li{
+    margin: 0 30px;
+    position: relative;
+    /* border-bottom: 2px solid #fff; */
+    padding-bottom:3px;
+    
+}
+
+.navigation-list li::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    height: 2px;
+    width: 0;
+    background-color: #E2D9D5;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navigation-list li::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 2px;
+    width: 0;
+    background-color: #E2D9D5;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navigation-list li:hover::before{
+   width: 50%;
+}
+
+.navigation-list li:hover::after{
+    width: 50%;
+}
+ 
+
+.actions{
+    display: flex;
+    align-items: center;
+    margin: 0 40px 0 0;
+}
+
+
+.actions > * {
+    margin: 0 10px;
+}
+
+
+.menuBurger{
+    display: none;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    position: relative;
+    
+}
+
+.search__input__wrapper{
+    position: absolute;
+    right: 0px;
+    overflow: hidden;
+    width: 0px;
+    transition: all 0.3s;
+    padding: 0 35px 0 10px;
+    border-bottom: 2px solid #e2d9d5;
+    z-index: 1;
+
+}
+.search__input__wrapper input{
+    background-color: transparent;
+    font-size: 16px;
+    border: none;
+    color: #e2d9d5;
+    width: 100%;
+}
+
+
+.account{
+    display: flex;
+    align-items: center;
+    position: relative;
+
+}
+
+.account__menu{
+    position: absolute;
+    background-color: #e2d9d5;
+    width: 100%;
+    height: 80px;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    transition: all 0.3s;
+    overflow: hidden;
+}
+
+.account__menu__wrapper{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: end;
+    box-sizing: border-box;
+    padding: 0 40px;
+    width: 100%;
+    height: 100%;
+    color:#151927;
+    text-transform: uppercase;
+}
+
+.account__menu__wrapper button{
+    height: 100%;
+    padding: 0 15px;
+    border-left: 2px solid #151927;
+
+
+    transition: all 0.3s;
+}
+/* .account__menu__wrapper button:first-child{
+    border-right: 2px solid #151927;
+
+} */
+
+
+.account__menu__wrapper button:hover{
+    background-color: #151927;
+    color:#e2d9d5;
+}
+
+.account__menu__wrapper button:active{
+    transition: none;
+    background-color: #2a2e41;
+}
+
+.basket-menu-burger__icon{
+    display: none;
+    position: relative;
+    width: 35px;
+    height: 25px;
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+.basket-menu-burger__icon span{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #e2d9d5;
+    border-radius: 7px;
+    opacity: 1;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
+
+.basket-menu-burger__icon span:nth-child(1){
+    top: 0px;
+}
+
+.basket-menu-burger__icon span:nth-child(2), .basket-menu-burger__icon span:nth-child(3){
+    top: 11px;
+}
+.basket-menu-burger__icon span:nth-child(4){
+    top: 22px;
+}
+
+
+.basket-menu-burger__icon.open span:nth-child(1), .basket-menu-burger__icon.open span:nth-child(4){
+    top: 11px;
+    left: 50%;
+    width: 0%;
+}
+
+.basket-menu-burger__icon.open span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.basket-menu-burger__icon.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.basket-floating-button{
+    position: fixed;
+    top: 80vh;
+    right: 15px;
+    z-index: 10;
+    transition: all 0.3s;
+}
+
+.basket-floating-button__wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #E2D9D5;
+}
+
+.basket-floating-button__quantity{
+    font-weight: 700;
+    color:#151927;
+}
+
+@media (max-width: 1024px){
+    .header nav{
+        display: none;
+    }
+    .menuBurger{
+        display: block;
+    }
+    .search{
+        display: none;
+    }
+
+    .basket-menu-burger__icon{
+        display: block;
+    }
+
+    /* .account{
+        display: none;
+    } */
+    .basket-header{
+        display: none;
+    }
+    
+}
+
+@media (max-width: 425px){
+    .logo{
+        margin: 0 0 0 15px;
+    }
+    .actions{
+        margin: 0 5px 0 0;
+    }
+    
+}

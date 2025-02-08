@@ -1,0 +1,49 @@
+
+
+
+.button_wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 3px;
+    background-color: #E2D9D5;
+
+    transition: all .3s;
+
+}
+
+.button1{
+    flex: 1 1;
+    /* border: 2px solid #151927; */
+    background-color: #E2D9D5;
+    color: #151927;
+
+    font-family:  Playfair Display;
+    font-size: 20px;
+    transition: all .3s;
+
+}
+
+
+.button_wrapper:hover{
+    padding: 0;
+}
+.button_wrapper:hover .button1{
+    border-left: 2px solid #E2D9D5;
+    border-right: 2px solid #E2D9D5;
+
+
+} 
+
+@media (max-width: 680px){
+    .button_wrapper{
+        width: 100%;
+    }
+    .button1{
+        width: 90%;
+        height: 90%;
+    }
+}

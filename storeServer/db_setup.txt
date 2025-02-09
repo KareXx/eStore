@@ -1,0 +1,19 @@
+CREATE TABLE products ( id SERIAL PRIMARY KEY, name VARCHAR(100) NOT NULL, price INTEGER NOT NULL, description TEXT, img VARCHAR(255) NOT NULL, details TEXT, collection VARCHAR(100));
+
+CREATE TABLE categories (id SERIAL PRIMARY KEY, name VARCHAR(100) NOT NULL, slug VARCHAR(100) NOT NULL);
+
+CREATE TABLE product_categories (product_id INT references products(id) ON delete CASCADE, category_id INT references categories(id) ON delete CASCADE, PRIMARY KEY (product_id, category_id));
+
+CREATE TABLE product_images (id SERIAL PRIMARY KEY, image_url VARCHAR(255) NOT NULL, product_id INT references products(id) ON delete CASCADE);
+
+CREATE TABLE roles (id SERIAL PRIMARY KEY, name VARCHAR(100) NOT NULL);
+
+CREATE TABLE users (id SERIAL PRIMARY KEY, role INT NOT NULL references roles(id) SET NULL, name VARCHAR(100) NOT NULL, email VARCHAR(255), password VARCHAR(255) NOT NULL);
+
+CREATE TABLE basket_statuses (id SERIAL PRIMARY KEY, name VARCHAR(100) NOT NUll, slug VARCHAR(100) NOT NUll);
+
+CREATE TABlE baskets (id SERIAL PRIMARY KEY, user_id INT NOT NUll references users(id) ON delete CASCADE, product_id INT NOT NULL references products(id) ON delete CASCADE, quantity INT, status INT references basket_statuses(id) ON DELETE SET NULL);
+
+CREATE TABLE wishies (product_id INT references products(id) ON delete CASCADE, user_id INT references users(id) ON delete CASCADE, PRIMARY KEY (product_id, user_id));
+
+
